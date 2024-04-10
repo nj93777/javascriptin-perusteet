@@ -13,20 +13,19 @@ console.log(shoutMyName('Charley')); // "CHARLEY"
 console.log(shoutMyName('alex')); // "ALEX"
 
 
-
 // Treenaa: Keksi itse samanlainen funktio eri nimellä
 
 //Palauttaa nimet pienillä kirjaimilla.
 
-function namesToLowerCase(name) {
-    // Muuttaa ja palauttaa nimen pienillä kirjaimilla
-    return name.toLowerCase();
-}
+function shoutMyName(name) {
+    // Muuttaa ja palauttaa nimen ISOILLA kirjaimilla
+    return name.toUpperCase();
+    }
 
 // Kutsu tekemääsi funktiota
-console.log(namesToLowerCase('ApplE')); // "apple"
-console.log(namesToLowerCase('NoKiA')); // "nokia"
-console.log(namesToLowerCase('koira')); // "koira"
+console.log(shoutMyName('Juuso')); // JUUSO
+console.log(shoutMyName('Meeri')); // MEERI
+console.log(shoutMyName('Sami')); // SAMI
 
 
 
