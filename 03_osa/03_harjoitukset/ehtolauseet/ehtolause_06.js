@@ -5,7 +5,13 @@ Kehitä funktio nimeltä greaterNum, joka:
 - Palauttaa näistä kahdesta suuremman numeron.
  */
 
-function greaterNum() {}
+function greaterNum(num1, num2) {
+    if (num1 > num2) {
+        return num1;
+    } else {
+        return num2
+    }
+}
 
 // Esimerkkikäyttö - älä muokkaa
 console.log(greaterNum(5, 10));
