@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    
+<script>
+    
+function getTemperature(temp) {
+  if (temp < 15) {
+    console.log('Pue takki päälle, on kylmä!');
+  } else {
+    console.log('Ei tarvitse pukea takkia, on tarpeeksi lämmin.');
+  }
+}
+
+let esimerkki = prompt('Mikä on nykyinen lämpötila?');
+let numero = Number(esimerkki);
+
+getTemperature(numero);
+
+</script>
+
+</body>
+</html>
