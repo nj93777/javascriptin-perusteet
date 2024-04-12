@@ -5,4 +5,16 @@ for (let i = 1; i <= 100; i++) {
     if (i % 2 !== 0) {
         console.log(i);
     }
-}
+} 
+
+
+
+
+
+/**  testausta *
+for (let kertsi = 0; kertsi < 5; kertsi++) {
+     console.log("Loop iteration: " + kertsi);
+} /*tttt*/
+
+
+
