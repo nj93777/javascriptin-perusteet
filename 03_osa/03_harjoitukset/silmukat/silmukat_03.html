@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+let etaisyys, aika;
+
+while (true) {
+  etaisyys = Number(prompt('Syötä etäisyys kilometreinä (syötä 0 lopettaaksesi):'));
+
+  if (etaisyys === 0) {
+    console.log('Etäisyys on 0 - ohjelma päättyy');
+    break;
+  }
+
+  aika = Number(prompt('Syötä aika tunteina'));
+  if (aika === 0) {
+    console.log('Aika ei voi olla nolla. Syötä uudestaan:');
+    continue;
+  }
+
+  let keskinopeus = etaisyys / aika;
+  console.log(`Keskinopeus on: ${keskinopeus} km/h`);
+}
+
+
+    </script>
+
+
+</body>
+</html>

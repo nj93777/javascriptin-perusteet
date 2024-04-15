@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+let summa = 0;
+let laskuri = 0;
+
+while (true) {
+    let syote = Number(prompt("Syötä numero (0 lopettaa):"));
+    if (syote === 0) {
+        break;
+    }
+    summa += syote;
+    laskuri++;
+}
+
+if (laskuri > 0) {
+    let keskiarvo = summa / laskuri;
+    console.log(`Syötettyjen numeroiden keskiarvo on ${keskiarvo}`);
+} else {
+    console.log("Yhtään numeroa ei syötetty.");
+}
+
+
+</script>
+
+</body>
+</html>

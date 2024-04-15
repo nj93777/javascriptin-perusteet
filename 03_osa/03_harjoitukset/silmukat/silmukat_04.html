@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    
+    let parillisetLuvut = 0;
+let laskuri = 0;
+
+do {
+  let syote = Number(prompt('Syötä luku:'));
+  laskuri++;
+  if (syote % 2 === 0) {
+    parillisetLuvut++;
+  }
+} while (laskuri < 20);
+
+console.log(`Parillisia lukuja oli ${parillisetLuvut}`);
+
+</script>
+
+</body>
+</html>
