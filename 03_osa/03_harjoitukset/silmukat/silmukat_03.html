@@ -8,30 +8,34 @@
 <body>
     
     <script>
+    // Alustetaan muuttujat etäisyydelle ja ajalle
+    let etaisyys, aika;
 
-let etaisyys, aika;
+    // Käynnistetään silmukka, joka pyörii kunnes käyttäjä syöttää 0 etäisyydeksi
+    while (true) {
+      // Pyydetään käyttäjältä etäisyyttä ja muutetaan syöte numeroksi
+      etaisyys = Number(prompt('Syötä etäisyys kilometreinä (syötä 0 lopettaaksesi):'));
 
-while (true) {
-  etaisyys = Number(prompt('Syötä etäisyys kilometreinä (syötä 0 lopettaaksesi):'));
+      // Tarkistetaan, onko etäisyys 0, jolloin ohjelma lopetetaan
+      if (etaisyys === 0) {
+        console.log('Etäisyys on 0 - ohjelma päättyy');
+        break;
+      }
 
-  if (etaisyys === 0) {
-    console.log('Etäisyys on 0 - ohjelma päättyy');
-    break;
-  }
+      // Pyydetään käyttäjältä aikaa tunteina ja muutetaan syöte numeroksi
+      aika = Number(prompt('Syötä aika tunteina'));
+      // Jos aika on 0, ilmoitetaan virheestä ja jatketaan silmukkaa
+      if (aika === 0) {
+        console.log('Aika ei voi olla nolla. Syötä uudestaan:');
+        continue;
+      }
 
-  aika = Number(prompt('Syötä aika tunteina'));
-  if (aika === 0) {
-    console.log('Aika ei voi olla nolla. Syötä uudestaan:');
-    continue;
-  }
-
-  let keskinopeus = etaisyys / aika;
-  console.log(`Keskinopeus on: ${keskinopeus} km/h`);
-}
-
+      // Lasketaan keskinopeus jakamalla etäisyys ajalla
+      let keskinopeus = etaisyys / aika;
+      // Tulostetaan laskettu keskinopeus konsoliin
+      console.log(`Keskinopeus on: ${keskinopeus} km/h`);
+    }
 
     </script>
-
-
 </body>
 </html>

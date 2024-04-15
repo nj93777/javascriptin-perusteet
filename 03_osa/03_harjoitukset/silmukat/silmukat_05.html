@@ -7,29 +7,38 @@
 </head>
 <body>
     
-<script>
-
-let summa = 0;
-let laskuri = 0;
-
-while (true) {
-    let syote = Number(prompt("Syötä numero (0 lopettaa):"));
-    if (syote === 0) {
-        break;
-    }
-    summa += syote;
-    laskuri++;
-}
-
-if (laskuri > 0) {
-    let keskiarvo = summa / laskuri;
-    console.log(`Syötettyjen numeroiden keskiarvo on ${keskiarvo}`);
-} else {
-    console.log("Yhtään numeroa ei syötetty.");
-}
-
-
-</script>
+    <script>
+        // Alustetaan muuttuja summan laskemiseksi
+        let summa = 0;
+        // Alustetaan laskuri laskemaan syötettyjen numeroiden määrää
+        let laskuri = 0;
+    
+        // Käytetään toistuvaa silmukkaa, joka pyörii kunnes käyttäjä antaa syötteenä 0
+        while (true) {
+            // Pyydetään käyttäjältä numero ja muunnetaan syöte numeroksi
+            let syote = Number(prompt("Syötä numero (0 lopettaa):"));
+            // Jos käyttäjä antaa numeron 0, silmukka katkaistaan break-komennolla
+            if (syote === 0) {
+                break;
+            }
+            // Lisätään syötetty numero summa-muuttujaan
+            summa += syote;
+            // Kasvatetaan laskuria yhdellä jokaisen syötetyn numeron jälkeen
+            laskuri++;
+        }
+    
+        // Tarkistetaan, onko syötetty yhtään numeroa
+        if (laskuri > 0) {
+            // Jos numeroita on syötetty, lasketaan keskiarvo jakamalla summa laskurilla
+            let keskiarvo = summa / laskuri;
+            // Tulostetaan keskiarvo konsoliin
+            console.log(`Syötettyjen numeroiden keskiarvo on ${keskiarvo}`);
+        } else {
+            // Jos numeroita ei ole syötetty, ilmoitetaan siitä konsolissa
+            console.log("Yhtään numeroa ei syötetty.");
+        }
+    </script>
+    
 
 </body>
 </html>

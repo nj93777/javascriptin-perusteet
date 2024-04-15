@@ -7,20 +7,28 @@
 </head>
 <body>
     
-<script>
-    
+  <script>
+    // Alustetaan muuttuja parillisten lukujen määrän laskemiseen
     let parillisetLuvut = 0;
-let laskuri = 0;
+    // Alustetaan laskuri, joka pitää kirjaa kysyttyjen lukujen määrästä
+    let laskuri = 0;
 
-do {
-  let syote = Number(prompt('Syötä luku:'));
-  laskuri++;
-  if (syote % 2 === 0) {
-    parillisetLuvut++;
-  }
-} while (laskuri < 20);
+    // Toistetaan silmukkaa kunnes 20 lukua on syötetty
+    do {
+      // Pyydetään käyttäjältä luku ja muunnetaan se numeroksi
+      let syote = Number(prompt('Syötä luku:'));
+      // Kasvatetaan laskuria yhdellä
+      laskuri++;
+      // Tarkistetaan, onko käyttäjän antama luku parillinen
+      if (syote % 2 === 0) {
+        // Jos on, kasvatetaan parillisten lukujen määrää yhdellä
+        parillisetLuvut++;
+      }
+    // Jatketaan toistoa, kunnes laskuri saavuttaa 20
+    } while (laskuri < 20);
 
-console.log(`Parillisia lukuja oli ${parillisetLuvut}`);
+    // Tulostetaan konsoliin, kuinka monta parillista lukua käyttäjä antoi
+    console.log(`Parillisia lukuja oli ${parillisetLuvut}`);
 
 </script>
 
