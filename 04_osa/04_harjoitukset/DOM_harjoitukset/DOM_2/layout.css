@@ -1,0 +1,22 @@
+#inputArea {
+    background-image: url('./img/13-3-8070209.avif'); 
+    background-size: cover; /* Asettaa kuvan peittämään koko alueen */
+    padding: 20px; /* Lisää tilaa sisäpuolelle, jotta teksti ei ole aivan reunassa */
+}
+
+#fruitList {
+    margin-top: 10px; /* Antaa pienen tilan syöttöalueen ja listan välille */
+}
+
+#fruitList li:nth-child(odd) {
+    color: red; /* Värittää joka toisen (parittoman) elementin punaiseksi */
+}
+
+#fruitList li:nth-child(even) {
+    color: yellow; /* Värittää joka toisen (parillisen) elementin keltaiseksi */
+}
+
+
+#fruitInput, #addFruitBtn {
+    margin-bottom: 10px; /* Varmistaa, että on tilaa syöttöalueen ympärillä */
+}

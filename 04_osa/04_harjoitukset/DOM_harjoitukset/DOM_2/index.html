@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM 2</title>
-  </head>
-  <body>
+    <link rel="stylesheet" href="layout.css">
+</head>
+<body>
     <h1>Fruits</h1>
-    <ul id="fruitList">
-      <li>Omena</li>
-      <li>Kirsikka</li>
-      <li>Päärynä</li>
-    </ul>
-    <input type="text" id="fruitInput" placeholder="Hedelmän nimi" />
-    <button id="addFruitBtn">Lisää hedelmä</button>
+    <div id="inputArea">
+        <input type="text" id="fruitInput" placeholder="Hedelmän nimi" />
+        <button id="addFruitBtn">Lisää hedelmä</button>
+        <ul id="fruitList">
+            <li>Omena</li>
+            <li>Kirsikka</li>
+            <li>Päärynä</li>
+        </ul>
+    </div>
     <script src="script.js"></script>
-  </body>
+</body>
 </html>

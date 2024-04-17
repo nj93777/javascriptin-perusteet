@@ -16,3 +16,15 @@ Tapahtumankäsittelijän funktion tulisi:
 - Hakea nykyinen arvo syötekentästä.
 - Päivitä displayText <div>:n textContent vastaamaan syötekentän arvoa.
 - Saadaksesi näytön päivittymään dynaamisemmin (käyttäjän kirjoittaessa), harkitse input-tapahtuman käyttämistä change-tapahtuman sijasta tai sen lisäksi. */
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Hae input-elementti ja display-elementti
+    var textInput = document.getElementById("textInput");
+    var displayText = document.getElementById("displayText");
+
+    // Lisää tapahtumankuuntelija input-elementtiin
+    textInput.addEventListener("input", function() {
+        // Päivitä displayText-elementin sisältö vastaamaan inputin sisältöä
+        displayText.textContent = textInput.value;
+    });
+});
