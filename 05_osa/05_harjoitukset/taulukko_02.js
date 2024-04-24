@@ -9,8 +9,27 @@ Odotettu tulos:
 */
 // Kirjoita funktiosi tähän
 
+// Määritellään taulukko myAlphabet
+
+// Funktio, joka kirjaa myAlphabet-taulukon pituuden ja tarkistaa sen suuruuden
+
+function myAlphabetLength() {
+    // Kirjataan taulukon pituus
+    console.log(`Taulukon myAlphabet pituus: ${myAlphabet.length}`);
+
+    // Tarkistetaan, onko taulukon pituus alle 5
+    if (myAlphabet.length < 5) {
+        console.log("Taulukon pituus on alle 5.");
+    } else {
+        console.log("Taulukon pituus on suurempi tai yhtä suuri kuin 5.");
+    }
+}
+// Kutsutaan funktiota nähdäksemme tulosteen
+myAlphabetLength();
+
+
 // Harjoitus 2: Käy läpi taulukko ja kirjaa jokainen alkio sen indeksillä
-const planets = ['Merkurius', 'Venus', 'Maa', 'Mars', 'Jupiter'];
+const planets = ['Merkurius', 'Venus', 'Maa', 'Mars', 'Jupiter', 'Pluto'];
 /*
 Kirjaa jokainen planeetta taulukossa yhdessä sen indeksin kanssa.
 Odotetut tulokset:
@@ -19,6 +38,16 @@ Odotetut tulokset:
 "Planeetta: Jupiter, Indeksi: 4"
 */
 // Kirjoita koodisi tähän
+
+// Määritellään vakio 'planets', joka sisältää planeettojen nimet
+
+// Käydään läpi 'planets'-taulukko forEach-metodilla
+planets.forEach((planet, index) => {
+    // Kirjataan jokainen planeetta ja sen indeksi
+    console.log(`Planeetta: ${planet}, Indeksi: ${index}`);
+});
+
+
 
 // Harjoitus 3: Kirjaa taulukon alkiot niiden tyyppeineen
 const wowDatatypes = [1, 'text', false, null, undefined];
@@ -32,6 +61,13 @@ Odotetut tulokset:
 */
 // Kirjoita koodisi tähän
 
+for (let i = 0; i < wowDatatypes.length; i++) {
+    const element = wowDatatypes[i];
+    const type = typeof element;
+    console.log(`Alkio: ${element}, Indeksi: ${i}, Tyyppi: ${type}`);
+}
+
+
 // Harjoitus 4: Kirjaa taulukon alkiot ilman silmukkaa
 let myArr = [1, 2, 'One', true];
 /*
@@ -39,6 +75,8 @@ Kirjaa jokainen alkio tässä taulukossa metodin avulla eli ilman silmukkaa.
 Odotetut tulokset: 1, 2, "One", true
 */
 // Kirjoita koodisi tähän
+
+
 
 // Harjoitus 5: Etsi yhteiset kurssit kahden opiskelijan välillä
 let student1Courses = ['Matematiikka', 'Englanti', 'Ohjelmointi'];
