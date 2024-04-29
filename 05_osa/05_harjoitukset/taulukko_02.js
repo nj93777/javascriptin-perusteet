@@ -76,16 +76,25 @@ Odotetut tulokset: 1, 2, "One", true
 */
 // Kirjoita koodisi tähän
 
+myArr.forEach(element => console.log(element));
 
 
 // Harjoitus 5: Etsi yhteiset kurssit kahden opiskelijan välillä
-let student1Courses = ['Matematiikka', 'Englanti', 'Ohjelmointi'];
-let student2Courses = ['Maantieto', 'Espanja', 'Ohjelmointi'];
+let student1Courses = ['Matematiikka', 'Englanti', 'Ohjelmointi', 'Historia'];
+let student2Courses = ['Maantieto', 'Espanja', 'Ohjelmointi', 'Historia'];
 /*
 Tunnista ja kirjaa ylös kaikki kurssit, jotka ovat yhteisiä sekä student1Courses- että student2Courses-taulukossa.
 Odotettu tulos: "Yhteinen kurssi: Ohjelmointi"
 */
 // Kirjoita koodisi tähän
+
+// Etsitään yhteiset kurssit
+let commonCourses = student1Courses.filter(course => student2Courses.includes(course));
+
+// Tulostetaan yhteiset kurssit
+commonCourses.forEach(course => console.log("Yhteinen kurssi: " + course));
+
+
 
 // Harjoitus 6: Kirjaa jokainen taulukon alkion kirjain
 let furniture = ['Pöytä', 'Tuolit', 'Matto'];
@@ -97,6 +106,11 @@ Odotetut tulokset:
 "Kirjaimet 'Matto'-sanassa: M, a, t, t, o"
 */
 // Kirjoita koodisi tähän
+
+
+
+
+
 
 // Harjoitus 7: Suodata positiiviset lämpötilat
 let temperatures = [-5, 3, -1, 22, -40, 5, 18];
