@@ -86,7 +86,7 @@ let student2Courses = ['Maantieto', 'Espanja', 'Ohjelmointi', 'Historia'];
 Tunnista ja kirjaa ylös kaikki kurssit, jotka ovat yhteisiä sekä student1Courses- että student2Courses-taulukossa.
 Odotettu tulos: "Yhteinen kurssi: Ohjelmointi"
 */
-// Kirjoita koodisi tähän
+
 
 // Etsitään yhteiset kurssit
 let commonCourses = student1Courses.filter(course => student2Courses.includes(course));
@@ -105,8 +105,17 @@ Odotetut tulokset:
 ...
 "Kirjaimet 'Matto'-sanassa: M, a, t, t, o"
 */
-// Kirjoita koodisi tähän
 
+
+// Assuming 'furniture' array is already declared somewhere in your script
+furniture.forEach(item => {
+    // Splitting the item into an array of characters
+    let characters = item.split('');
+    // Joining the characters array into a string separated by commas
+    let characterString = characters.join(', ');
+    // Logging the result in the specified format
+    console.log(`Kirjaimet '${item}'-sanassa: ${characterString}`);
+});
 
 
 
@@ -118,19 +127,35 @@ let temperatures = [-5, 3, -1, 22, -40, 5, 18];
 Kirjoita getPositiveTemperatures-funktio siten, että se palauttaa taulukon, joka sisältää positiiviset lämpötilat (lämpötilat, jotka ovat yli 0).
 Odotettu tulos: [3, 22, 5, 18]
 */
-// Kirjoita koodisi tähän
+
+
+function getPositiveTemperatures(tempArray) {
+   
+    return tempArray.filter(temp => temp > 0);
+}
+
+let positiveTemperatures = getPositiveTemperatures(temperatures);
+
+
+console.log(positiveTemperatures);  // Expected output: [3, 22, 5, 18]
+
+
 
 // Harjoitus 8: Suodata parittomat vuodet
 /*
 Täydennä getOddYears-funktio siten, että se palauttaa kaikki vuodet, jotka ovat parittomia saamistaan vuosiparametreista. 
 Vuodet annetaan taulukkona.
 Odotetut tulokset:
+
 getOddYears([2019, 2020, 2021]) -> [2019, 2021]
 getOddYears([2000, 2015, 2018, 2020]) -> [2015]
 */
 
-// Kirjoita koodisi tähän
+function getOddYears(yearsArray) {
+    // Filtering out odd years
+    return yearsArray.filter(year => year % 2 !== 0);
+}
 
 // Testaus - Poista alta kommenttimerkinnät, niin voit testata funktion toimintaa
-// console.log(getOddYears([2019, 2020, 2021])); // [2019, 2021]
-// console.log(getOddYears([2000, 2015, 2018, 2020])); // [2015]
+console.log(getOddYears([2019, 2020, 2021])); // [2019, 2021]
+ console.log(getOddYears([2000, 2015, 2018, 2020])); // [2015]
