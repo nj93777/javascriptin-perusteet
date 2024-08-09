@@ -15,7 +15,7 @@
     <div class="container">
       <div class="image-container">
         <img src="pancake.jpeg" alt="Delicious pancakes" />
-        <div class="price-banner"><span id="totalPrice">5€</span></div>
+        <div class="price-banner"><span id="totalPriceBanner">5€</span></div>
       </div>
       <div class="form-container">
         <h2>Muokkaa Pancake-tilaustasi</h2>
@@ -89,20 +89,21 @@
             <label for="customerName">Nimesi</label>
             <input type="text" id="customerName" />
           </div>
-          <button>Tee tilaus</button>
+          <button type="button">Tee tilaus</button>
         </div>
         <div class="order">
           <p>Tyyppi: <span id="order_type"></span></p>
           <p>Lisukkeet: <span id="order_toppings"></span></p>
           <p>Extrat: <span id="order_extras"></span></p>
           <p>Nimi: <span id="order_name"></span></p>
-          <p>Hinta: <span id="order_price"></span></p>
+          <div class="price-display">
+            <h3>Total Price: <span id="totalPrice">0€</span></h3>
+          </div>
+          <button id="goToOrderManagement" onclick="window.location.href='order.html'">Siirry tilausten hallintasivulle</button>
         </div>
-        <!--         <div class="price-display">
-          <h3>Total Price: <span id="totalPrice">5€</span></h3>
-        </div> -->
       </div>
     </div>
+    <script src="order.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,75 +1,95 @@
-const form = document.querySelector('.form-container');
-const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-const typeSelect = document.querySelector('#type');
-const button = document.querySelector('button');
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector('.form-container');
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  const typeSelect = document.querySelector('#type');
+  const button = document.querySelector('button');
+  const orderManager = new OrderManager();
 
-let total;
-let toppings = [];
-let extras = [];
+  const updatePriceBanner = () => {
+    const totalPriceBanner = document.querySelector('#totalPriceBanner');
+    const priceBanner = document.querySelector('.price-banner');
 
-const pancakePriceCalc = () => {
-  const totalPriceElement = document.querySelector('#totalPrice');
-  const priceBanner = document.querySelector('.price-banner');
+    const selectedType = {
+      type: typeSelect.selectedOptions[0].text.split(' - ')[0],
+      price: parseInt(typeSelect.value)
+    };
+    const toppings = [];
+    const extras = [];
 
-  total = parseInt(typeSelect.value);
-  totalPriceElement.textContent = `$${total}`;
+    checkboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        const item = {
+          name: checkbox.dataset.name,
+          price: parseInt(checkbox.value)
+        };
+        if (checkbox.dataset.category === 'toppings') {
+          toppings.push(item);
+        } else {
+          extras.push(item);
+        }
+      }
+    });
 
-  checkToppings();
+    const order = new Order('', selectedType, toppings, extras);
+    const total = order.calculateTotalPrice();
 
-  priceBanner.animate(
-    [
-      { transform: 'scale(1)' },
-      { transform: 'scale(1.05)' },
-      { transform: ' scale(1)' },
-    ],
-    {
-      duration: 100,
-      iterations: 1,
-    }
-  );
-};
+    totalPriceBanner.textContent = `${total}€`;
 
-const addItem = (itemName, category) => {
-  if (category === 'toppings') {
-    toppings.push(itemName);
-  } else {
-    extras.push(itemName);
-  }
-};
+    priceBanner.animate(
+      [
+        { transform: 'scale(1)' },
+        { transform: 'scale(1.05)' },
+        { transform: 'scale(1)' },
+      ],
+      {
+        duration: 100,
+        iterations: 1,
+      }
+    );
+  };
 
-const checkToppings = () => {
-  toppings = [];
-  extras = [];
+  const displayOrder = () => {
+    const customerName = document.querySelector('#customerName').value;
+    const orderType = document.querySelector('#order_type');
+    const orderToppings = document.querySelector('#order_toppings');
+    const orderExtras = document.querySelector('#order_extras');
+    const orderName = document.querySelector('#order_name');
+    const totalPriceElement = document.querySelector('#totalPrice');
 
-  for (const item of checkboxes) {
-    const itemName = item.dataset.name;
-    const category = item.dataset.category;
+    const selectedType = {
+      type: typeSelect.selectedOptions[0].text.split(' - ')[0],
+      price: parseInt(typeSelect.value)
+    };
+    const toppings = [];
+    const extras = [];
 
-    if (item.checked) {
-      total += parseInt(item.value);
-      addItem(itemName, category);
-    } else {
-      removeItem(itemName, category);
-    }
-  }
-  console.log('toppings array', toppings);
-  console.log('extras array', extras);
-};
+    checkboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        const item = {
+          name: checkbox.dataset.name,
+          price: parseInt(checkbox.value)
+        };
+        if (checkbox.dataset.category === 'toppings') {
+          toppings.push(item);
+        } else {
+          extras.push(item);
+        }
+      }
+    });
 
-const displayOrder = () => {
-  const customerName = document.querySelector('#customerName').value;
-  const orderType = document.querySelector('#order_type');
-  const orderToppings = document.querySelector('#order_toppings');
-  const orderExtras = document.querySelector('#order_extras');
-  const orderName = document.querySelector('#order_name');
-  const orderPrice = document.querySelector('#order_price');
+    const order = new Order(customerName, selectedType, toppings, extras);
+    const total = order.calculateTotalPrice();
 
-  orderType.textContent = typeSelect.selectedOptions[0].text;
-  orderToppings.textContent = toppings.join(', ');
-  orderExtras.textContent = extras.join(', ');
-  orderName.textContent = customerName;
-  orderPrice.textContent = total;
-};
+    orderType.textContent = order.pancakeType.type;
+    orderToppings.textContent = order.toppings.map(t => t.name).join(', ');
+    orderExtras.textContent = order.extras.map(e => e.name).join(', ');
+    orderName.textContent = order.customerName;
+    totalPriceElement.textContent = `${total}€`;
 
-form.addEventListener('change', pancakePriceCalc);
-button.addEventListener('click', displayOrder);
+    // Add the order to the OrderManager and update the order list display
+    orderManager.addOrder(order);
+  };
+
+  form.addEventListener('change', updatePriceBanner);
+  button.addEventListener('click', displayOrder);
+});

@@ -83,3 +83,5 @@ console.log(occurrencesOfJukka);
 // Kirjoita koodisi tähän:
 let upperCaseMembers = combinedTeamMembers.map(member => member.toUpperCase());
 console.log(upperCaseMembers);
+
+
