@@ -19,5 +19,5 @@ function getFirstCharacter(name) {
 
 // Kutsu tekemääsi funktiota
 
-console.log(getFirstCharacter('Helsinki')); //"A"
+console.log(getFirstCharacter('Helsinki')); //"H"
 console.log(getFirstCharacter('Ruotsi')); // "R"
